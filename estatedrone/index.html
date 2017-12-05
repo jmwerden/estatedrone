@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EstateDrone</title>
+
+
+
+  <!-- SlidesJS Required (if responsive): Sets the page width to the device width. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- End SlidesJS Required -->
+
+  <!-- CSS for slidesjs.com example -->
+  <!-- <link rel="stylesheet" href="css/example.css"> -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <style>
+     /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+     #map {
+       height: 100%;
+     }
+     /* Optional: Makes the sample page fill the window. */
+     /*html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }*/
+   </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+      <link rel="stylesheet" href="styles.css">
+  <!-- End CSS for slidesjs.com example -->
+
+  <!-- SlidesJS Optional: If you'd like to use this design -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="icon" href="images/icon.png">
+
+  <!-- SlidesJS Required: -->
+</head>
+<body>
+
+  <!-- SlidesJS Required: Start Slides -->
+  <!-- The container is used to define the width of the slideshow -->
+  <!-- Slider main container -->
+
+
+      <!-- If we need scrollbar -->
+      <div class="container-fluid">
+        <div class="col-md-2 col-xs-5">
+      <a href="index.html" id="logo"><img id="logo" src="images/logo.png"></a>
+        </div>
+        <div class="col-md-7 col-xs-0"></div>
+        <div class="col-md-2 col-xs-7"><a  href="maps/index.html"><h3>View Listings</h3></a></div>
+          <div class="col-md-1 col-xs-0"><a class="mobilehide"href="mailto:j@droneestate.com"><h3>Contact</h3></a></div>
+      </div>
+      <div class="container title">
+        <div class="col-md-3 col-xs-1"></div>
+        <div class="col-md-6 center col-xs-12">
+          <h1> Search Home Listings From a New Perspective</h1>
+
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <iframe src="https://player.vimeo.com/video/170255655?background=1" id="dronevid" class="mobilehide" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/170255655?background=1" id="dronevid" class="desktophide" width="500" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <div id="zestimate">
+      </div>
+      <div class="container bottom">
+        <div class="col-md-3 col-xs-12">
+          <h4>What is EstateDrone?</h4>
+          <p> EstateDrone is an effort to use modern digital media - especially drone footage to create more interactive and enjoyable residential and commercial real estate listings. </p>
+        </div>
+        <div class="col-md-6 col-xs-12"></div>
+        
+        <iframe src="twitter/index.php" width="400" height="400">
+          alternative content for browsers which do not support iframe.
+        </iframe>
+        <div class="col-md-3 col-xs-0">
+            <ul id="rudr_instafeed"></ul>
+          </div>
+
+      </div>
+
+
+
+
+<script src="js/scripts.js"></script>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.94726, lng: -79.10057},
+          zoom: 16
+        });
+
+      var marker = new google.maps.Marker({
+         position: {lat: 35.94726, lng: -79.10057},
+         map: map,
+         title: 'Hello World!'
+       });
+     }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsNnreQxD3O0ULsiKK-ItEgwK9SjgIErE&callback=initMap"
+    async defer></script>
+
+
+  <!-- End SlidesJS Required: Start Slides -->
+
+  <!-- SlidesJS Required: Link to jQuery -->
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Link to jquery.slides.js -->
+  <!-- <script src="js/jquery.slides.min.js"></script> -->
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+
+
+  <script>
+
+  var token = '6672350225.81d7860.d2c8cb8a67ac481c8cd7bad8e47385d5',
+      num_photos = 4;
+
+  $.ajax({
+  	url: 'https://api.instagram.com/v1/users/self/media/recent',
+  	dataType: 'jsonp',
+  	type: 'GET',
+  	data: {access_token: token, count: num_photos},
+  	success: function(data){
+   		console.log(data);
+  		for( x in data.data ){
+  			$('ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>');
+  		}
+  	},
+  	error: function(data){
+  		console.log(data);
+  	}
+  });
+
+
+  </script>
+  <!-- End SlidesJS Required -->
+
+
+</body>
+</html>

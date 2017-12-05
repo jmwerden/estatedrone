@@ -1,0 +1,50 @@
+/*// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap*/
+
+  h1{
+    position: absolute;
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+  }
+  #map {
+    position: absolute;
+    height: 100%;
+    z-index: 999;
+    width: 100%;
+  }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  #logo{
+    width: 200px;
+    margin-left: 2%;
+  }
+  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #logo{
+    width: 200px;
+    margin-left: 2%;
+  }
+   }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #logo{
+    width: 200px;
+    margin-left: 2%;
+  }
+  h1{
+    position: absolute;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  #logo{
+    width: 200px;
+    margin-left: 2%;
+  }
+
+}
