@@ -1,0 +1,73 @@
+/*// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap*/
+
+
+  html, body {
+  background: white;
+}
+.bottom{
+      display: block;
+}
+#rudr_instafeed{
+  list-style:none
+}
+#rudr_instafeed li{
+  float:left;
+  width:200px;
+  height:200px;
+  margin:10px
+}
+#rudr_instafeed li img{
+  max-width:100%;
+  max-height:100%;
+}
+.randomBaseClass {
+  padding: 5px;
+}
+.foo {
+  font-size: 12px;
+}
+h1{
+  position: absolute;
+  color: white;
+  text-align: center;
+  margin-top: 20%;
+}
+.mobilehide{
+  display: none;
+}
+/* mobile landscape */
+@media all and (min-width: 480px) {
+  .mobilehide{
+    display: none;
+  }
+}
+
+/* tablet */
+@media all and (min-width: 768px) {
+
+}
+
+/* desktop */
+@media all and (min-width: 1024px) {
+  .desktophide{
+    display: none;
+  }
+  .mobilehide{
+    display: flex;
+  }
+  .bottom{
+    display: block;
+  }
+}
+
+/* desktop wide */
+@media all and (min-width: 1200px) {
+  .desktophide{
+    display: none;
+  }
+  .bottom{
+    display: block;
+  }
+
+}

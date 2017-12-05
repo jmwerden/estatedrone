@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EstateDrone</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <link rel="icon" href="../images/icon.png">
+    <![endif]-->
+      <link rel="icon" href="../../images/icon.png">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-md-2 col-xs-5">
+    <a href="../../index.html" id="logo"><img id="logo" src="images/logo.png"></a>
+      </div>
+      <div class="col-md-7 col-xs-3"></div>
+      <div class="col-md-2 col-xs-2"><a href="../index.html"><h3>View Listings</h3></a></div>
+        <div class="col-md-1 col-xs-2"><a class="mobilehide" href="mailto:j@droneestate.com"><h3>Contact</h3></a></div>
+    </div>
+
+    <div>
+      <div class="col-md-4 col-xs-0"></div>
+      <h2>256 Franklin St. Chapel Hill, NC</h2>
+    </div>
+    <iframe src="https://player.vimeo.com/video/106964899?background=1" id="dronevid" class="mobilehide" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+    <div id="vimeoTITLE"></div>
+    <div id="vimeoURL"></div>
+
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+
+
+    player.on('play', function() {
+        console.log('played the video!');
+    });
+
+    player.getVideoTitle().then(function(title) {
+        console.log('title:', title);
+        $( "#vimeoTITLE" ).append( "Video Title: " + title );
+        $('#vimeoTITLE')[0].click();
+    });
+
+    player.getVideoUrl().then(function(url) {
+      // url = the vimeo.com url for the video
+        $( "#vimeoURL" ).append( "Video URL: " + url );
+  }).catch(function(error) {
+      switch (error.name) {
+          case 'PrivacyError':
+              // the url isn’t available because of the video’s privacy setting
+              break;
+
+          default:
+              // some other error occurred
+              break;
+      }
+  });
+
+
+  </script>
+  <iframe src="https://player.vimeo.com/video/106964899?background=1" id="dronevid" class="desktophide" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+    <div class="container-fluid">
+          <iframe src="mapiframe/index.html" id="iMap"></iframe>
+    </div>
+
+    <!-- <script>
+      var map;
+      function initMap() {
+          console.log("hi");
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.94726, lng: -79.10057},
+          zoom: 16
+        });
+
+      var marker = new google.maps.Marker({
+         position: {lat: 35.94716, lng: -79.10751},
+         map: map,
+         title: '108 lake ridge place'
+       });
+       var marker2 = new google.maps.Marker({
+          position: {lat: 35.9471, lng: -79.10948},
+          map: map,
+          title: '108 lake ridge place'
+        });
+        var marker3 = new google.maps.Marker({
+           position: {lat: 35.94721, lng: -79.16},
+           map: map,
+           title: '108 lake ridge place'
+         });
+         var marker4 = new google.maps.Marker({
+            position: {lat: 35.94729, lng: -79.10350},
+            map: map,
+            title: '108 lake ridge place'
+          });
+          var marker5 = new google.maps.Marker({
+             position: {lat: 35.94719, lng: -79.10166},
+             map: map,
+             title: '108 lake ridge place'
+           });
+           marker.addListener('click', function() {
+              window.open('index.html');
+           });
+           marker2.addListener('click', function() {
+              window.open('index.html');
+           });
+           marker3.addListener('click', function() {
+              window.open('index.html');
+           });
+           marker4.addListener('click', function() {
+              window.open('index.html');
+           });
+           marker5.addListener('click', function() {
+              window.open('index.html');
+           });
+
+     }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsNnreQxD3O0ULsiKK-ItEgwK9SjgIErE&callback=initMap"
+    async defer></script> -->
+
+<!-- 1. Drone Video in Background
+2. Overlay
+3. Link to maps
+4. Using Vimeo API
+5. Twitter API
+
+maps
+Individual house pages  -->
+
+
+    <!-- TODO: Here goes your content! -->
+
+
+
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

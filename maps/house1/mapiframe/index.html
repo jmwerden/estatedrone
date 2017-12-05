@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EstateDrone</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <link rel="icon" href="../images/icon.png">
+    <![endif]-->
+      <link rel="icon" href="../../images/icon.png">
+      <style>
+      #map{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+      </style>
+  </head>
+  <body>
+
+  <div id="map"></div>
+<script>
+  var map;
+  function initMap() {
+      console.log("hi");
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 35.94726, lng: -79.10057},
+      zoom: 16
+    });
+
+  var marker = new google.maps.Marker({
+     position: {lat: 35.94716, lng: -79.10751},
+     map: map,
+     title: '121 Shoreline Dr. Chapel Hill, NC'
+   });
+   var marker2 = new google.maps.Marker({
+      position: {lat: 35.9471, lng: -79.10948},
+      map: map,
+      title: '256 Franklin St. Chapel Hill, NC'
+    });
+    var marker3 = new google.maps.Marker({
+       position: {lat: 35.94721, lng: -79.16},
+       map: map,
+       title: '117 Hilltop Dr. Durham, NC'
+     });
+     var marker4 = new google.maps.Marker({
+        position: {lat: 35.94729, lng: -79.10350},
+        map: map,
+        title: '342 Kenan St. Chapel Hill, NC'
+      });
+      var marker5 = new google.maps.Marker({
+         position: {lat: 35.94719, lng: -79.10166},
+         map: map,
+         title: '405 Columbia St. Chapel Hill, NC'
+       });
+       marker.addListener('click', function() {
+          window.open('../index.html');
+       });
+       marker2.addListener('click', function() {
+          window.open('../../house2/index.html');
+       });
+       marker3.addListener('click', function() {
+          window.open('../../house3/index.html');
+       });
+       marker4.addListener('click', function() {
+          window.open('../../house4/index.html');
+       });
+       marker5.addListener('click', function() {
+          window.open('../../house5/index.html');
+       });
+
+ }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsNnreQxD3O0ULsiKK-ItEgwK9SjgIErE&callback=initMap"
+async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
